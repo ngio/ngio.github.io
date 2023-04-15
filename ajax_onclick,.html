@@ -1,0 +1,35 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<TITLE>AJAX</TITLE>
+<!-- Ajax간이 라이브러리 jslb_ajax.js -->
+<script languege = "JavaScript"  src      = "./lib/jslb_ajax.js" charset  = "utf-8"></script>
+<script language = "JavaScript">
+<!--
+
+  //콜백 함수 ( 수신시에 실행됩니다 )
+  function on_loaded1(oj)
+  {
+    //응답을 취득하여 디코딩
+    var res  =  decodeURIComponent(oj.responseText)
+    
+    //응답된 DIV에 출력
+    document.getElementById("output1").innerHTML=res
+  }
+
+//-->
+</script>
+
+<form>
+  <input type    = "text"  name    = "data">
+  <input type    = "button"  value   = "Ajax로 송신합니다"
+         onclick = "sendRequest(
+                      on_loaded1,                      //콜백 함수
+                     '&data='+this.form.data.value,    //데이터
+                     'GET',                            //HTTP 메소드
+                     './echo.php',                     //URL
+                      true,                            //비동기 
+                      true                             //강제 로드
+                    )">
+</form>
+
+<!-- 여기에 출력합니다 -->
+<div id="output1"></div>
