@@ -1,0 +1,117 @@
+<!--
+
+MIT License
+
+Copyright (c) 2022 Neatnik LLC
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--><!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>니토 캘린더</title>
+
+<meta property="og:title" content="니토 캘린더">
+<meta property="og:description" content="한 페이지에 1년 전체를 보여주는 간단한 인쇄용 달력">
+
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css" />
+
+<script type='text/javascript' src='neatocal.js'></script>
+<link rel='stylesheet' href='css/neatocal.css'>
+
+</head>
+
+<body>
+
+  <!-- INFO -->
+
+  <div id="ui_info" style='display:none;'>
+    <p> 이 페이지를 인쇄하면 1년 전체의 날짜를 한 페이지에 표시하는 멋진 달력을 얻을 수 있습니다.
+        어떤 크기의 용지에도 자동으로 한 장에 맞춰집니다. 최상의 결과를 위해
+        인쇄 설정에서 가로 방향을 선택하고 머리글과 바닥글을 비활성화하세요.
+    </p>
+
+    <p> 1년을 한눈에 파악하세요. 접어서 휴대하세요.
+        메모를 적으세요. 계획을 세우고 시간의 흐름을 관찰하세요.
+        무엇보다도, 다른 사람들에게 친절하세요.
+    </p>
+
+    <p> URL 파라미터를 추가하여 연도, 표시 스타일, 시작 월 등을 변경할 수 있습니다.
+
+    <ul>
+      <li> year (연도) </li>
+      <li> start_month (시작 월) </li>
+      <li> n_month (월 개수) </li>
+      <li> layout (레이아웃: `default` 또는 `aligned-weekdays`)</li>
+      <li> start_day (시작 요일, aligned-weekdays 레이아웃에서만 유효)</li>
+      <li> highlight_color (강조 색상) </li>
+      <li> weekday_code (요일 코드) </li>
+      <li> month_code (월 코드) </li>
+      <li> help (도움말) </li>
+    </ul>
+
+    예시: <a href='?year=2030'>`?year=2030`</a>
+
+    </p>
+
+    <p style="font-size: 80%; color: #999;">
+      <a href="https://github.com/abetusk/neatocal">소스 코드</a></p>
+    <p style="font-size: 80%; color: #999;"><a href="https://neatnik.net/">Neatnik</a>의 &#183;
+      원본 <a href="https://github.com/neatnik/calendar">소스 코드</a>를 기반으로 함</p>
+  </div>
+
+  <!-- INFO -->
+
+
+
+  <div id='ui_year' style='width:100%;'>
+      <span style='display:inline-block; width:100%; justify-content:center; text-align:center; margin: 0 0 .5em 0;'>YYYY</span>
+  </div>
+
+  <table id='ui_table'>
+    <thead id='ui_thead'>
+      <tr id='ui_tr_month_name'>
+        <th>1월</th>
+        <th>2월</th>
+        <th>3월</th>
+        <th>4월</th>
+        <th>5월</th>
+        <th>6월</th>
+        <th>7월</th>
+        <th>8월</th>
+        <th>9월</th>
+        <th>10월</th>
+        <th>11월</th>
+        <th>12월</th>
+      </tr>
+    </thead>
+
+    <tbody id='ui_tbody'>
+    </tbody>
+
+  </table>
+
+</body>
+
+<script>
+  neatocal_init();
+</script>
+</html>
